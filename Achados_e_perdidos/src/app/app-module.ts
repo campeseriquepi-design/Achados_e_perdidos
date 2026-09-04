@@ -3,11 +3,13 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing-module';
 import { App } from './app';
+import { FormsModule } from '@angular/forms';
+import { Ex1 } from './lista-ex/ex1/ex1';
 
 
 @NgModule({
-  declarations: [App],
-  imports: [BrowserModule, AppRoutingModule],
+  declarations: [App, Ex1],
+  imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [provideBrowserGlobalErrorListeners()],
   bootstrap: [App],
 })
