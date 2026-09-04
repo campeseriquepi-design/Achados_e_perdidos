@@ -5,10 +5,11 @@ import { AppRoutingModule } from './app-routing-module';
 import { App } from './app';
 import { FormsModule } from '@angular/forms';
 import { Ex1 } from './lista-ex/ex1/ex1';
+import { Ex2 } from './lista-ex/ex2/ex2';
 
 
 @NgModule({
-  declarations: [App, Ex1],
+  declarations: [App, Ex1, Ex2],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [provideBrowserGlobalErrorListeners()],
   bootstrap: [App],

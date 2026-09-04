@@ -8,6 +8,5 @@ import { FormsModule } from '@angular/forms';
 @NgModule({
   declarations: [],
   imports: [CommonModule, ListaExRoutingModule, FormsModule],
-  
 })
 export class ListaExModule {}
