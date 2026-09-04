@@ -1,0 +1,16 @@
+<h3>Tela de Login</h3>
+
+<div>
+  <label>Usuário: </label>
+  <input [(ngModel)]="usuario" placeholder="Digite seu usuário" />
+</div>
+
+<div>
+  <label>Senha: </label>
+  <input type="password" [(ngModel)]="senha" placeholder="Digite sua senha" />
+</div>
+
+<button (click)="fazerLogin()" [disabled]="usuario === '' || senha === ''">Entrar</button>
+
+<!-- Mensagem que aparece apenas após o login bem-sucedido -->
+<p *ngIf="logado">Bem-vindo, {{ usuario }}!</p>
