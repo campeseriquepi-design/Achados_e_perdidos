@@ -7,10 +7,11 @@ import { FormsModule } from '@angular/forms';
 import { Ex1 } from './lista-ex/ex1/ex1';
 import { Ex2 } from './lista-ex/ex2/ex2';
 import { Ex3 } from './lista-ex/ex3/ex3';
+import { Ex4 } from './lista-ex/ex4/ex4';
 
 
 @NgModule({
-  declarations: [App, Ex1, Ex2, Ex3],
+  declarations: [App, Ex1, Ex2, Ex3, Ex4],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [provideBrowserGlobalErrorListeners()],
   bootstrap: [App],
