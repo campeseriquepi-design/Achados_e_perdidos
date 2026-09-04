@@ -9,10 +9,11 @@ import { Ex2 } from './lista-ex/ex2/ex2';
 import { Ex3 } from './lista-ex/ex3/ex3';
 import { Ex4 } from './lista-ex/ex4/ex4';
 import { Ex5 } from './lista-ex/ex5/ex5';
+import { Ex6 } from './lista-ex/ex6/ex6';
 
 
 @NgModule({
-  declarations: [App, Ex1, Ex2, Ex3, Ex4, Ex5],
+  declarations: [App, Ex1, Ex2, Ex3, Ex4, Ex5, Ex6],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [provideBrowserGlobalErrorListeners()],
   bootstrap: [App],
