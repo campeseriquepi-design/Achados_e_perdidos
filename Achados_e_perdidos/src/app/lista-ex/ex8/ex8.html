@@ -1,0 +1,24 @@
+<h3>Cadastro de Produto</h3>
+
+<div>
+  <label>Produto: </label>
+  <input [(ngModel)]="produto" />
+</div>
+
+<div>
+  <label>Preço (R$): </label>
+  <input type="number" [(ngModel)]="preco" />
+</div>
+
+<div>
+  <label>Quantidade: </label>
+  <input type="number" [(ngModel)]="quantidade" />
+</div>
+
+<hr>
+
+<h4>Resumo Atualizado:</h4>
+<p>Produto: {{ produto }}</p>
+<p>Preço: R$ {{ preco }},00</p>
+<p>Quantidade: {{ quantidade }}</p>
+<p><strong>Total: R$ {{ preco * quantidade }},00</strong></p>
