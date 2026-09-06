@@ -1,0 +1,48 @@
+<div class="matricula-card">
+  <h2>Matrícula em Curso</h2>
+
+  <div class="campo-grupo">
+    <label for="nome">Nome do Aluno:</label>
+    <input 
+      id="nome" 
+      type="text" 
+      [(ngModel)]="nomeAluno" 
+      placeholder="Digite o nome do aluno"
+    />
+  </div>
+
+  <div class="campo-grupo">
+    <label>Quantidade de Disciplinas:</label>
+    <div class="contador-controls">
+      <button 
+        type="button" 
+        (click)="diminuirDisciplinas()" 
+        [disabled]="quantidadeDisciplinas <= 1">
+        -
+      </button>
+      <span>{{ quantidadeDisciplinas }}</span>
+      <button 
+        type="button" 
+        (click)="aumentarDisciplinas()">
+        +
+      </button>
+    </div>
+  </div>
+
+  <div class="preview">
+    <p><strong>Resumo em tempo real:</strong></p>
+    <p>Aluno: {{ nomeAluno.trim() || 'Aguardando preenchimento...' }}</p>
+    <p>Disciplinas: {{ quantidadeDisciplinas }}</p>
+  </div>
+
+  <button 
+    type="button" 
+    (click)="realizarMatricula()" 
+    [disabled]="!nomeAluno.trim()">
+    Realizar Matrícula
+  </button>
+
+  <p *ngIf="mensagemConfirmacao" class="mensagem-sucesso">
+    {{ mensagemConfirmacao }}
+  </p>
+</div>

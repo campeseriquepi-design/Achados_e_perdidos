@@ -1,0 +1,18 @@
+<div class="produto-card">
+  <h2>{{ produto.nome }}</h2>
+  <p><strong>Preço:</strong> {{ produto.preco | currency:'BRL':'symbol':'1.2-2' }}</p>
+
+  <div class="quantidade-controls">
+    <label>Quantidade: </label>    <button (click)="diminuirQuantidade()" [disabled]="quantidade === 1">-</button>
+    <span> {{ quantidade }} </span>
+    <button (click)="aumentarQuantidade()">+</button>
+  </div>
+
+  <p><strong>Total:</strong> {{ total | currency:'BRL':'symbol':'1.2-2' }}</p>
+
+  <button class="btn-adicionar" (click)="adicionarAoCarrinho()">Adicionar ao carrinho</button>
+
+  <p *ngIf="mensagemCarrinho" class="mensagem-sucesso">
+    {{ mensagemCarrinho }}
+  </p>
+</div>

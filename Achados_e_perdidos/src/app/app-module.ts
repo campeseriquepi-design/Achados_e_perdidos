@@ -14,10 +14,12 @@ import { Ex7 } from './lista-ex/ex7/ex7';
 import { Ex8 } from './lista-ex/ex8/ex8';
 import { Ex9 } from './lista-ex/ex9/ex9';
 import { Ex10 } from './lista-ex/ex10/ex10';
+import { Ex11 } from './lista-ex/ex11/ex11';
+import { DesafioFinal } from './lista-ex/desafio-final/desafio-final';
 
 
 @NgModule({
-  declarations: [App, Ex1, Ex2, Ex3, Ex4, Ex5, Ex6, Ex7, Ex8, Ex9, Ex10],
+  declarations: [App, Ex1, Ex2, Ex3, Ex4, Ex5, Ex6, Ex7, Ex8, Ex9, Ex10, Ex11,DesafioFinal],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [provideBrowserGlobalErrorListeners()],
   bootstrap: [App],
