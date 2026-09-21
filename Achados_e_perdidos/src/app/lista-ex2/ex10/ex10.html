@@ -1,0 +1,39 @@
+<h2>Promoção Produtos</h2>
+
+<button (click)="ativarPromocao()">
+  Ativar promoção
+</button>
+
+<button (click)="desativarPromocao()">
+  Desativar promoção
+</button>
+
+<hr>
+
+<strong>{{ produtoPromocional.nome }}</strong>
+
+<p
+  [ngStyle]="{
+    'color': promocao ? 'red' : 'black',
+    'font-weight': promocao ? 'bold' : 'normal'
+  }"
+>
+  Preço: R$ {{ produtoPromocional.preco | number:'1.2-2' }}
+</p>
+
+@if (promocao) {
+
+  <p
+    [ngStyle]="{
+      'color': 'green',
+      'font-weight': 'bold'
+    }"
+  >
+    Produto em promoção!
+  </p>
+
+  <p>
+    Desconto: {{ produtoPromocional.desconto * 100 }}%
+  </p>
+
+}

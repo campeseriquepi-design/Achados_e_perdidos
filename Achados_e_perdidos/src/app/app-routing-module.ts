@@ -14,11 +14,14 @@ const routes: Routes = [{
 {path: 'lista-ex',
   loadChildren: () => import ('./lista-ex/lista-ex-module').then(m=> m.ListaExModule)
 },
-]
+
 {
-  path:'lista=ex2'
+  path:'lista-ex2',
     loadChildren: () => import ('./lista-ex2/lista-ex2-module').then(m=> m.ListaEx2Module)
-};
+  
+}
+
+];
 
 
 

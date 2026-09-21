@@ -1,0 +1,20 @@
+<h2>Disciplinas</h2>
+
+<div
+  *ngFor="
+    let disciplina of disciplinas;
+    let par = even;
+    let impar = odd;
+    let primeira = first;
+    let ultima = last
+  "
+  [ngClass]="{
+    'cor-par': par,
+    'cor-impar': impar,
+    'primeira': primeira,
+    'ultima': ultima
+  }"
+>
+  <p>{{ disciplina.nome }}</p>
+  <p>Nota: {{ disciplina.nota }}</p>
+</div>

@@ -1,0 +1,37 @@
+<h2>Lista de nomes</h2>
+
+<p>Total de nomes: {{ nomes.length }}</p>
+
+@if (nomes.length === 0) {
+
+  <p>Nenhum nome cadastrado</p>
+
+} @else {
+
+  <ul>
+    <li *ngFor="let pessoa of nomes; let i = index; let primeiro = first; let ultimo = last">
+
+  {{ i + 1 }} - {{ pessoa.nome }}
+
+  @if (primeiro) {
+    <strong> - Primeiro da lista</strong>
+  }
+
+  @if (ultimo) {
+    <strong> - Último da lista</strong>
+  }
+
+</li>
+
+  </ul>
+
+}
+
+<button (click)="removerNomes()">
+Remover último </button>
+
+<button (click)="limparNomes()">
+Limpar lista </button>
+
+<button (click)="restaurarNomes()">
+Restaurar lista </button>

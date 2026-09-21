@@ -1,0 +1,24 @@
+import { Component } from '@angular/core';
+
+interface Produto {
+  id: number;
+  nome: string;
+  preco: number;
+  quantidade: number;
+}
+
+@Component({
+  selector: 'app-ex8',
+  standalone: false,
+  templateUrl: './ex8.html',
+  styleUrl: './ex8.scss',
+})
+export class Ex8 {
+   produtos: Produto[] = [
+    { id: 1, nome: 'Arroz', preco: 5.99, quantidade: 10 },
+    { id: 2, nome: 'Feijão', preco: 7.49, quantidade: 5 },
+    { id: 3, nome: 'Macarrão', preco: 3.99, quantidade: 8 },
+    { id: 4, nome: 'Óleo de Soja', preco: 4.29, quantidade: 3 },
+    { id: 5, nome: 'Açúcar', preco: 2.99, quantidade: 12 }
+  ];
+}

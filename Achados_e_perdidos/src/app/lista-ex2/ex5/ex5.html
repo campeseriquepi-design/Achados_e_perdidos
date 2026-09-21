@@ -1,0 +1,17 @@
+<h2>Lista de nomes</h2>
+
+<ul>
+  <li *ngFor="let pessoa of nomes; let i = index; let primeiro = first; let ultimo = last">
+
+    {{ i + 1 }} - {{ pessoa.nome }}
+
+    @if (primeiro) {
+      <strong> - Primeiro da lista</strong>
+    }
+
+    @if (ultimo) {
+      <strong> - Último da lista</strong>
+    }
+
+  </li>
+</ul>

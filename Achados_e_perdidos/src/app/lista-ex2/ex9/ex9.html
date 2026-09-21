@@ -1,0 +1,33 @@
+<h2>Classificação dos produtos</h2>
+
+@for (produto of produtos; track produto.id) {
+
+  <div
+    [ngClass]="{
+      'cor-vermelho': produto.quantidade === 0,
+      'cor-amarelo': produto.quantidade >= 1 && produto.quantidade <= 5,
+      'cor-verde': produto.quantidade > 5
+    }"
+  >
+
+    <h3>{{ produto.nome }}</h3>
+
+    <p>Quantidade: {{ produto.quantidade }}</p>
+
+    @if (produto.quantidade === 0) {
+
+      <p>Sem estoque.</p>
+
+    } @else if (produto.quantidade >= 1 && produto.quantidade <= 5) {
+
+      <p>Estoque baixo.</p>
+
+    } @else {
+
+      <p>Estoque disponível.</p>
+
+    }
+
+  </div>
+
+}
