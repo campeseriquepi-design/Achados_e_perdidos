@@ -1,0 +1,46 @@
+<h2>Cadastro de produtos</h2>
+
+<label>Nome do produto:</label>
+
+<input
+  type="text"
+  [(ngModel)]="nome"
+  placeholder="Digite o nome"
+/>
+
+<br><br>
+
+<label>Quantidade:</label>
+
+<input
+  type="number"
+  [(ngModel)]="quantidade"
+  min="0"
+/>
+
+<br><br>
+
+<button (click)="cadastrarProduto()">
+  Cadastrar
+</button>
+
+<p *ngIf="mensagem !== ''">
+  {{ mensagem }}
+</p>
+
+<hr>
+
+<h3>Produtos cadastrados</h3>
+
+<div *ngFor="let produto of produtos; let i = index">
+
+  <p>
+    <strong>{{ produto.nome }}</strong>
+    - Quantidade: {{ produto.quantidade }}
+
+    <button (click)="excluirProduto(i)">
+      Excluir
+    </button>
+  </p>
+
+</div>

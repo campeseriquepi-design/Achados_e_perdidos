@@ -1,0 +1,93 @@
+<h1>Painel de Projetos</h1>
+
+<p>
+  Total de projetos: {{ projetos.length }}
+</p>
+
+<p>
+  Projetos concluídos: {{ quantidadeConcluidos() }}
+</p>
+
+<button (click)="alternarConcluidos()">
+  {{ mostrarConcluidos ? 'Ocultar concluídos' : 'Mostrar concluídos' }}
+</button>
+
+<hr>
+
+@if (projetos.length === 0) {
+
+  <p>Nenhum projeto cadastrado.</p>
+
+}
+
+@for (projeto of projetos; track projeto.id; let i = $index) {
+
+  @if (mostrarConcluidos || projeto.status !== 'concluído') {
+
+    <div
+      class="projeto"
+      [ngClass]="projeto.status"
+      [ngStyle]="{
+        'border-width': projeto.nota !== null && projeto.nota >= 7 ? '3px' : '1px'
+      }"
+    >
+
+      <h2>
+        Projeto #{{ i + 1 }} - {{ projeto.titulo }}
+      </h2>
+
+      <p>
+        <strong>Equipe:</strong> {{ projeto.equipe }}
+      </p>
+
+      <p>
+        <strong>Status:</strong> {{ projeto.status }}
+      </p>
+
+      @if (projeto.nota !== null) {
+
+        <p>
+          <strong>Nota:</strong> {{ projeto.nota }}
+        </p>
+
+      } @else {
+
+        <p>
+          Nota ainda não definida
+        </p>
+
+      }
+
+      @if (projeto.entregue) {
+
+        <p class="entregue">
+          Projeto entregue
+        </p>
+
+      }
+
+      @if (projeto.nota !== null && projeto.nota >= 7) {
+
+        <p class="nota-alta">
+          Projeto com nota igual ou superior a 7
+        </p>
+
+      }
+
+      @if (projeto.nota !== null && projeto.nota < 6) {
+
+        <p class="nota-baixa">
+          Atenção: nota inferior a 6
+        </p>
+
+      }
+
+      <button (click)="alterarStatus(projeto)">
+        Alterar status
+      </button>
+
+    </div>
+
+  }
+
+}

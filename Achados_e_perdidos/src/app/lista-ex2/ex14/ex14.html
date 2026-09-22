@@ -1,0 +1,56 @@
+<h2>Conversão para a sintaxe moderna</h2>
+
+@for (produto of produtos; track produto.id) {
+
+  <div>
+
+    <h3>{{ produto.nome }}</h3>
+
+    <p>
+      Quantidade: {{ produto.quantidade }}
+    </p>
+
+    @if (produto.quantidade === 0) {
+
+      <p>
+        Sem estoque
+      </p>
+
+    } @else if (produto.quantidade <= 5) {
+
+      <p>
+        Estoque baixo
+      </p>
+
+    } @else {
+
+      <p>
+        Estoque disponível
+      </p>
+
+    }
+
+  </div>
+
+} @empty {
+
+  <p>
+    Não existem produtos cadastrados.
+  </p>
+
+}
+
+<hr>
+
+<h3>Diferenças percebidas</h3>
+
+<p>
+  1. Na sintaxe tradicional usamos *ngIf para criar condições.
+  Na sintaxe moderna usamos &#64;if e &#64;else.
+</p>
+
+<p>
+  2. Na sintaxe tradicional usamos *ngFor para percorrer listas.
+  Na sintaxe moderna usamos &#64;for e podemos utilizar track para
+  identificar cada item da lista.
+</p>
