@@ -5,13 +5,8 @@
 
     {{ i + 1 }} - {{ pessoa.nome }}
 
-    @if (primeiro) {
-      <strong> - Primeiro da lista</strong>
-    }
-
-    @if (ultimo) {
-      <strong> - Último da lista</strong>
-    }
+    <strong *ngIf="primeiro"> - Primeiro da lista</strong>
+    <strong *ngIf="ultimo"> - Último da lista</strong>
 
   </li>
 </ul>

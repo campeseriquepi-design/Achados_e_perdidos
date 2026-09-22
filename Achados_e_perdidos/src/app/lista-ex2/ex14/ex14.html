@@ -1,43 +1,53 @@
 <h2>Conversão para a sintaxe moderna</h2>
 
+<h3>Exercício 3 - Verificação de idade</h3>
+
+<p>Idade: {{ idade }}</p>
+<button (click)="diminuirIdade()">-</button>
+<button (click)="aumentarIdade()">+</button>
+
+@if (idade < 12) {
+  <p>Criança</p>
+} @else if (idade <= 17) {
+  <p>Adolescente</p>
+} @else if (idade <= 59) {
+  <p>Adulto</p>
+} @else {
+  <p>Idoso</p>
+}
+
+<hr>
+
+<h3>Exercício 6 - Tratamento de lista vazia</h3>
+
+<button (click)="limparNomes()">Limpar lista</button>
+<button (click)="restaurarNomes()">Restaurar lista</button>
+
+@for (nome of nomes; track nome) {
+  <p>{{ nome }}</p>
+} @empty {
+  <p>Nenhum nome cadastrado</p>
+}
+
+<hr>
+
+<h3>Exercício 9 - Classificação dos produtos</h3>
+
 @for (produto of produtos; track produto.id) {
-
   <div>
-
-    <h3>{{ produto.nome }}</h3>
-
-    <p>
-      Quantidade: {{ produto.quantidade }}
-    </p>
+    <h4>{{ produto.nome }}</h4>
+    <p>Quantidade: {{ produto.quantidade }}</p>
 
     @if (produto.quantidade === 0) {
-
-      <p>
-        Sem estoque
-      </p>
-
+      <p>Sem estoque</p>
     } @else if (produto.quantidade <= 5) {
-
-      <p>
-        Estoque baixo
-      </p>
-
+      <p>Estoque baixo</p>
     } @else {
-
-      <p>
-        Estoque disponível
-      </p>
-
+      <p>Estoque disponível</p>
     }
-
   </div>
-
 } @empty {
-
-  <p>
-    Não existem produtos cadastrados.
-  </p>
-
+  <p>Não existem produtos cadastrados.</p>
 }
 
 <hr>
@@ -45,12 +55,14 @@
 <h3>Diferenças percebidas</h3>
 
 <p>
-  1. Na sintaxe tradicional usamos *ngIf para criar condições.
-  Na sintaxe moderna usamos &#64;if e &#64;else.
+  1. Na sintaxe tradicional usamos *ngIf para criar condições no template.
+  Na sintaxe moderna usamos &#64;if e &#64;else, com uma estrutura mais parecida com
+  blocos de código do TypeScript/JavaScript.
 </p>
 
 <p>
   2. Na sintaxe tradicional usamos *ngFor para percorrer listas.
-  Na sintaxe moderna usamos &#64;for e podemos utilizar track para
-  identificar cada item da lista.
+  Na sintaxe moderna usamos &#64;for, que exige a cláusula track para identificar
+  cada item e possui o bloco &#64;empty embutido para tratar listas vazias,
+  sem precisar de um *ngIf separado.
 </p>

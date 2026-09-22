@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 import { ListaEx2RoutingModule } from './lista-ex2-routing-module';
 import { Campotexto } from './campotexto/campotexto';
@@ -38,6 +39,6 @@ import { DesafioFinal } from './desafio-final/desafio-final';
     Ex14,
     DesafioFinal,
   ],
-  imports: [CommonModule, ListaEx2RoutingModule],
+  imports: [CommonModule, FormsModule, ListaEx2RoutingModule],
 })
 export class ListaEx2Module {}

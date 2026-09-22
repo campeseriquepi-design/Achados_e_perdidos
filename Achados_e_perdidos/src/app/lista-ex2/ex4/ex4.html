@@ -2,13 +2,9 @@
 
 <p>Quantidade em estoque: {{ quantidadeEstoque }}</p>
 
-@if (quantidadeEstoque > 0) {
-  <p>Produto disponível</p>
-}
+<p *ngIf="quantidadeEstoque > 0">Produto disponível</p>
 
-@if (quantidadeEstoque === 0) {
-  <p>Produto sem estoque</p>
-}
+<p *ngIf="quantidadeEstoque === 0">Produto sem estoque</p>
 
 <button (click)="adicionarProduto()">
   Adicionar
