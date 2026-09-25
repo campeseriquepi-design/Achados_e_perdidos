@@ -13,6 +13,7 @@ import { Ex9 } from './ex9/ex9';
 import { Ex10 } from './ex10/ex10';
 import { Ex11 } from './ex11/ex11';
 import { DesafioFinal } from './desafio-final/desafio-final';
+import { Pai } from './pai/pai';
 
 const routes: Routes = [
   {
@@ -62,6 +63,10 @@ const routes: Routes = [
   {
     path: 'desafio-final',
     component: DesafioFinal,
+  },
+  {
+    path: 'pai',
+    component: Pai
   }
 
 ];

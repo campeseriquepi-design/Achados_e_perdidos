@@ -16,10 +16,11 @@ import { Ex9 } from './ex9/ex9';
 import { Ex10 } from './ex10/ex10';
 import { Ex11 } from './ex11/ex11';
 import { DesafioFinal } from './desafio-final/desafio-final';
-
+import { Pai } from './pai/pai';
+import { Filho } from './filho/filho';
 
 @NgModule({
-  declarations: [Ex1, Ex2, Ex3, Ex4, Ex5, Ex6, Ex7, Ex8, Ex9, Ex10, Ex11,DesafioFinal],
+  declarations: [Ex1, Ex2, Ex3, Ex4, Ex5, Ex6, Ex7, Ex8, Ex9, Ex10, Ex11, DesafioFinal, Pai, Filho],
   imports: [CommonModule, ListaExRoutingModule, FormsModule],
 })
 export class ListaExModule {}
